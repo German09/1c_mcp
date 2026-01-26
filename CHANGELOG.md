@@ -7,14 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.0.7] - 2026-01-27
-
 ### Changed
-- Реорганизация документации: оригинальный README перенесён в `ORIGINAL_README.md`
-- Новый README с описанием отличий форка и примерами использования
-- Добавлено предупреждение о безопасности данных при работе с AI
 
-## [1.0.6] - 2026-01-25
+## [1.0.6] - 2026-01-27
 
 ### Added
 - Инструмент работы с запросами (`mcp_ИнструментРаботаСЗапросами`):
@@ -26,7 +21,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Инструмент данных о конфигурации (`mcp_ИнструментДанныеОКонфигурации`):
   - Расширены и уточнены описания инструментов (`list_metadata_objects`, `get_metadata_structure`) для LLM.
   - Добавлены примеры использования, списки допустимых типов метаданных и рекомендации по цепочкам вызовов (Best Practices).
-
-[Unreleased]: https://github.com/RooLee10/1c_mcp/compare/1.0.7...HEAD
-[1.0.7]: https://github.com/RooLee10/1c_mcp/releases/tag/1.0.7
-[1.0.6]: https://github.com/RooLee10/1c_mcp/releases/tag/1.0.6
+  - Реорганизация документации: оригинальный README перенесён в `ORIGINAL_README.md`
+  - Новый README с описанием отличий форка и примерами использования
+  - Добавлено предупреждение о безопасности данных при работе с AI
