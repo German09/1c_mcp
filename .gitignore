@@ -218,3 +218,14 @@ yarn-error.log*
 *.dmg 
 
 src/1c_ext/ConfigDumpInfo.xml
+
+# Claude Code files (local development)
+.claude/
+CLAUDE.md
+claude.md
+
+# MCP configuration (may contain credentials)
+.mcp.json
+
+# Test files (local)
+test/

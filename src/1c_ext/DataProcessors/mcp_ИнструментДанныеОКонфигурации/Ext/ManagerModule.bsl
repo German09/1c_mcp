@@ -120,7 +120,7 @@
 	МассивПараметров = Новый Массив;
 	
 	// Параметр metaType - тип объекта метаданных (только те, у которых есть структура)
-	СписокТиповМетаданных = "Catalogs,Documents,InformationRegisters,AccumulationRegisters,AccountingRegisters,CalculationRegisters,Reports,DataProcessors,ChartsOfCharacteristicTypes,ChartsOfAccounts,ChartsOfCalculationTypes,BusinessProcesses,Tasks,ExchangePlans";
+	СписокТиповМетаданных = "Catalogs,Documents,InformationRegisters,AccumulationRegisters,AccountingRegisters,CalculationRegisters,Reports,DataProcessors,Enums,ChartsOfCharacteristicTypes,ChartsOfAccounts,ChartsOfCalculationTypes,BusinessProcesses,Tasks,ExchangePlans";
 	
 	МассивПараметров.Добавить(mcp_Метаданные.ПараметрИнструмента(
 		"metaType",

@@ -41,11 +41,15 @@
 		</InternalInfo>
 		<Properties>
 			<ObjectBelonging>Adopted</ObjectBelonging>
-			<Name>MCP_Сервер</Name>
+			<Name>mcp_tools</Name>
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>MCP-сервер</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru1</v8:lang>
+					<v8:content>1c-mcp-tools</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment/>
@@ -59,7 +63,7 @@
 			</UsePurposes>
 			<ScriptVariant>Russian</ScriptVariant>
 			<Vendor/>
-			<Version>1.0.6</Version>
+			<Version>1.0.7</Version>
 			<BriefInformation/>
 			<DetailedInformation/>
 			<Copyright/>
