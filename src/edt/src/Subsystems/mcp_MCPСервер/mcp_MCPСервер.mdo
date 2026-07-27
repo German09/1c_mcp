@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="72c96244-916c-4c57-b77c-415cd5212774">
+  <name>mcp_MCPСервер</name>
+  <synonym>
+    <key>ru</key>
+    <value>MCP-cервер</value>
+  </synonym>
+  <includeHelpInContents>true</includeHelpInContents>
+  <includeInCommandInterface>true</includeInCommandInterface>
+  <content>HTTPService.mcp_APIBackend</content>
+  <content>DataProcessor.mcp_УправлениеСервером</content>
+  <subsystems>mcp_КонтейнерыИнструментов</subsystems>
+  <subsystems>mcp_КонтейнерыРесурсов</subsystems>
+  <subsystems>mcp_КонтейнерыПромптов</subsystems>
+</mdclass:Subsystem>

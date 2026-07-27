@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="31e7609b-629b-424a-924d-0b03f09ea071">
+  <producedTypes>
+    <objectType typeId="46394879-3a46-4bba-b6ab-f00cab14ac3c" valueTypeId="da4d285b-cb0b-4d41-ad17-76efbae451cf"/>
+    <managerType typeId="f0a606cb-1c10-4347-b58f-e017b23cd926" valueTypeId="d547205e-78cd-4d06-ba49-e4642895c7a4"/>
+  </producedTypes>
+  <name>mcp_РесурсОписаниеСинтаксисаВстроенногоЯзыка</name>
+  <synonym>
+    <key>ru</key>
+    <value>Описание синтаксиса встроенного языка (ресурс)</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <templates uuid="a359d1f5-54d7-4209-aacf-20fc12aace36">
+    <name>syntax_1c</name>
+    <synonym>
+      <key>ru</key>
+      <value>Syntax 1c</value>
+    </synonym>
+    <templateType>TextDocument</templateType>
+  </templates>
+</mdclass:DataProcessor>

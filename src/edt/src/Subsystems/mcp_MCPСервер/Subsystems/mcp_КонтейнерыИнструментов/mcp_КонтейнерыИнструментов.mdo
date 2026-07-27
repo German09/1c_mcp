@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="41b9e681-c136-4c1a-865d-048761425ac7">
+  <name>mcp_КонтейнерыИнструментов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Контейнеры инструментов</value>
+  </synonym>
+  <includeHelpInContents>true</includeHelpInContents>
+  <content>DataProcessor.mcp_ИнструментДанныеОКонфигурации</content>
+  <parentSubsystem>Subsystem.mcp_MCPСервер</parentSubsystem>
+</mdclass:Subsystem>

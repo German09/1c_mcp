@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="824406f6-43a9-4e3e-960e-39a9eed432cb">
+  <name>mcp_APIBackend</name>
+  <synonym>
+    <key>ru</key>
+    <value>Бэкэнд API для MCP</value>
+  </synonym>
+  <rootURL>mcp</rootURL>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="a669bf45-5a33-4e83-9605-448e3d5029ce">
+    <name>rpc</name>
+    <synonym>
+      <key>ru</key>
+      <value>Rpc</value>
+    </synonym>
+    <template>/rpc</template>
+    <methods uuid="71b655cd-93b3-427f-b531-709972c02d89">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>rpcPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="0f0973cc-bed9-4494-a3d6-274d79a3a5c9">
+    <name>health</name>
+    <synonym>
+      <key>ru</key>
+      <value>Health</value>
+    </synonym>
+    <template>/health</template>
+    <methods uuid="e96ab3b0-15e1-4e28-b73f-7c853a4ebfe1">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <handler>healthGET</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="9292073a-3405-4d4f-ba9a-90a8d054f3ff">
+    <name>mcp</name>
+    <synonym>
+      <key>ru</key>
+      <value>Mcp</value>
+    </synonym>
+    <template>/*</template>
+    <methods uuid="c6094c73-651e-4f90-9e4d-3ed3adbb4885">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>mcpPOST</handler>
+    </methods>
+    <methods uuid="c9658ca3-90ac-43fa-9387-36a9b092b531">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <handler>mcpGET</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>

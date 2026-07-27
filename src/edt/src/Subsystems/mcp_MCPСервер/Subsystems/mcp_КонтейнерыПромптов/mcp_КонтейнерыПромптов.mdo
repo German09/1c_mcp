@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="82261560-a50a-4495-9018-2bc8bdd1fd3c">
+  <name>mcp_КонтейнерыПромптов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Контейнеры промптов</value>
+  </synonym>
+  <includeHelpInContents>true</includeHelpInContents>
+  <parentSubsystem>Subsystem.mcp_MCPСервер</parentSubsystem>
+</mdclass:Subsystem>

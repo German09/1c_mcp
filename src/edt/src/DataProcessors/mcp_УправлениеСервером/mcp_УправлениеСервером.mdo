@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="06a9aad8-a8ef-41ad-b436-427800876ce4">
+  <producedTypes>
+    <objectType typeId="c09f7fb9-0161-4caa-b47f-0de8e861cefd" valueTypeId="b39a5350-907f-4b30-95ce-47f4a9bcbb1b"/>
+    <managerType typeId="5277467a-7d45-457a-a40d-b551cc70f61b" valueTypeId="65418df2-831a-4325-8e75-7a741015e060"/>
+  </producedTypes>
+  <name>mcp_УправлениеСервером</name>
+  <synonym>
+    <key>ru</key>
+    <value>Управление MCP-сервером</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.mcp_УправлениеСервером.Form.Форма</defaultForm>
+  <forms uuid="2e01ea2b-aac1-46e4-9d4d-10455479dea5">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

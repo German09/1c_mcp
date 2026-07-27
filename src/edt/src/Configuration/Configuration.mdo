@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" xmlns:mdclassExtension="http://g5.1c.ru/v8/dt/metadata/mdclass/extension" uuid="471acdde-293c-497c-bd55-e6ab48d98dc4">
+  <name>MCP_Сервер</name>
+  <synonym>
+    <key>ru</key>
+    <value>MCP-сервер</value>
+  </synonym>
+  <objectBelonging>Adopted</objectBelonging>
+  <extension xsi:type="mdclassExtension:ConfigurationExtension">
+    <defaultRunMode>Checked</defaultRunMode>
+    <usePurposes>Checked</usePurposes>
+    <defaultRoles>Extended</defaultRoles>
+  </extension>
+  <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="3b8e6b17-7228-44b5-a965-ed927e018f33"/>
+  <containedObjects classId="9fcd25a0-4822-11d4-9414-008048da11f9" objectId="2fa2d15d-e72e-4628-bffa-cf8a22779f6e"/>
+  <containedObjects classId="e3687481-0a87-462c-a166-9f34594f9bba" objectId="043cdc90-202b-46cc-890c-e9bcd93b50f7"/>
+  <containedObjects classId="9de14907-ec23-4a07-96f0-85521cb6b53b" objectId="a4298964-e396-44aa-820e-fd1293207b8f"/>
+  <containedObjects classId="51f2d5d8-ea4d-4064-8892-82951750031e" objectId="65c48c89-48b3-4679-9859-dec14c059e28"/>
+  <containedObjects classId="e68182ea-4237-4383-967f-90c1e3370bc7" objectId="fd695762-444f-4bb0-8715-372304e85616"/>
+  <containedObjects classId="fb282519-d103-4dd3-bc12-cb271d631dfc" objectId="bd2ec323-f379-41c8-bda5-39dacc283166"/>
+  <keepMappingToExtendedConfigurationObjectsByIDs>true</keepMappingToExtendedConfigurationObjectsByIDs>
+  <namePrefix>mcp_</namePrefix>
+  <configurationExtensionCompatibilityMode>8.3.20</configurationExtensionCompatibilityMode>
+  <configurationExtensionPurpose>AddOn</configurationExtensionPurpose>
+  <defaultRunMode>ManagedApplication</defaultRunMode>
+  <usePurposes>PersonalComputer</usePurposes>
+  <scriptVariant>Russian</scriptVariant>
+  <defaultRoles>Role.mcp_ОсновнаяРоль</defaultRoles>
+  <vendor>Харин Владимир</vendor>
+  <version>1.6.0</version>
+  <vendorInformationAddress>
+    <key>ru</key>
+    <value>https://vharin.ru</value>
+  </vendorInformationAddress>
+  <configurationInformationAddress>
+    <key>ru</key>
+    <value>https://github.com/vladimir-kharin/1c_mcp</value>
+  </configurationInformationAddress>
+  <languages uuid="3934c8ff-fc70-4830-a011-1fe02d9fe553">
+    <name>Русский</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:LanguageExtension">
+      <languageCode>Checked</languageCode>
+    </extension>
+    <languageCode>ru</languageCode>
+  </languages>
+  <subsystems>Subsystem.mcp_MCPСервер</subsystems>
+  <roles>Role.mcp_ОсновнаяРоль</roles>
+  <commonModules>CommonModule.mcp_ОбщегоНазначения</commonModules>
+  <commonModules>CommonModule.mcp_Диспетчер</commonModules>
+  <commonModules>CommonModule.mcp_КонтейнерыПовтИсп</commonModules>
+  <commonModules>CommonModule.mcp_Метаданные</commonModules>
+  <commonModules>CommonModule.mcp_Выполнение</commonModules>
+  <commonModules>CommonModule.mcp_Содержимое</commonModules>
+  <httpServices>HTTPService.mcp_APIBackend</httpServices>
+  <dataProcessors>DataProcessor.mcp_УправлениеСервером</dataProcessors>
+  <dataProcessors>DataProcessor.mcp_ИнструментДанныеОКонфигурации</dataProcessors>
+  <dataProcessors>DataProcessor.mcp_РесурсОписаниеСинтаксисаВстроенногоЯзыка</dataProcessors>
+</mdclass:Configuration>
