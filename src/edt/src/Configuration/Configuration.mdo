@@ -9,6 +9,7 @@
   <extension xsi:type="mdclassExtension:ConfigurationExtension">
     <defaultRunMode>Checked</defaultRunMode>
     <usePurposes>Checked</usePurposes>
+    <managedApplicationModule>Extended</managedApplicationModule>
     <defaultRoles>Extended</defaultRoles>
   </extension>
   <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="3b8e6b17-7228-44b5-a965-ed927e018f33"/>
@@ -26,8 +27,7 @@
   <usePurposes>PersonalComputer</usePurposes>
   <scriptVariant>Russian</scriptVariant>
   <defaultRoles>Role.mcp_ОсновнаяРоль</defaultRoles>
-  <vendor>Харин Владимир</vendor>
-  <version>1.6.0</version>
+  <version>1.6.1</version>
   <vendorInformationAddress>
     <key>ru</key>
     <value>https://vharin.ru</value>

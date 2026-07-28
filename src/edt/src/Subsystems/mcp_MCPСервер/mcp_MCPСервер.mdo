@@ -6,7 +6,6 @@
     <value>MCP-cервер</value>
   </synonym>
   <includeHelpInContents>true</includeHelpInContents>
-  <includeInCommandInterface>true</includeInCommandInterface>
   <content>HTTPService.mcp_APIBackend</content>
   <content>DataProcessor.mcp_УправлениеСервером</content>
   <subsystems>mcp_КонтейнерыИнструментов</subsystems>
