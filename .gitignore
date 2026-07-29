@@ -219,13 +219,16 @@ yarn-error.log*
 
 src/1c_ext/ConfigDumpInfo.xml
 .mcp.json
-.claude/settings.local.json
+.claude/
+CLAUDE.md
+claude.md
 
 # Проектная документация (черновики, спецификации, заметки)
 doc/
 
 # Локальные инструменты Claude Code и настройки подключения к базе 1С
-.claude/skills/
 .1c-devbase.ps1
 .1c-devbase.bat
-CLAUDE.md
+
+# Test files (local)
+test/

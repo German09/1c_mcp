@@ -7,5 +7,6 @@
   </synonym>
   <includeHelpInContents>true</includeHelpInContents>
   <content>DataProcessor.mcp_ИнструментДанныеОКонфигурации</content>
+  <content>DataProcessor.mcp_ИнструментРаботаСЗапросами</content>
   <parentSubsystem>Subsystem.mcp_MCPСервер</parentSubsystem>
 </mdclass:Subsystem>

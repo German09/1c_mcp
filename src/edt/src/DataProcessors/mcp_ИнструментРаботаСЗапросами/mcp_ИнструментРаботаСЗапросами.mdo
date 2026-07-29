@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b317b483-e5c1-49fe-a8c9-1e7f6a1bab28">
+  <producedTypes>
+    <objectType typeId="10fd2adc-76d5-4559-bd9e-1cd5f00eddb5" valueTypeId="641af706-bedc-49f4-ab85-c1863a1511d2"/>
+    <managerType typeId="c90a10dd-62d9-4fd7-b316-9d116ab61b89" valueTypeId="2ab06318-384d-49d2-8a78-89e0ea13a786"/>
+  </producedTypes>
+  <name>mcp_ИнструментРаботаСЗапросами</name>
+  <synonym>
+    <key>ru</key>
+    <value>Работа с запросами (инструмент)</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+</mdclass:DataProcessor>

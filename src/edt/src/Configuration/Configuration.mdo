@@ -53,7 +53,8 @@
   <commonModules>CommonModule.mcp_Выполнение</commonModules>
   <commonModules>CommonModule.mcp_Содержимое</commonModules>
   <httpServices>HTTPService.mcp_APIBackend</httpServices>
-  <dataProcessors>DataProcessor.mcp_УправлениеСервером</dataProcessors>
   <dataProcessors>DataProcessor.mcp_ИнструментДанныеОКонфигурации</dataProcessors>
+  <dataProcessors>DataProcessor.mcp_ИнструментРаботаСЗапросами</dataProcessors>
   <dataProcessors>DataProcessor.mcp_РесурсОписаниеСинтаксисаВстроенногоЯзыка</dataProcessors>
+  <dataProcessors>DataProcessor.mcp_УправлениеСервером</dataProcessors>
 </mdclass:Configuration>

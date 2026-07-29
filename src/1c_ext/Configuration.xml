@@ -30,14 +30,26 @@
 				<xr:ClassId>fb282519-d103-4dd3-bc12-cb271d631dfc</xr:ClassId>
 				<xr:ObjectId>bd2ec323-f379-41c8-bda5-39dacc283166</xr:ObjectId>
 			</xr:ContainedObject>
+			<xr:PropertyState>
+				<xr:Property>CommandInterface</xr:Property>
+				<xr:State>Extended</xr:State>
+			</xr:PropertyState>
+			<xr:PropertyState>
+				<xr:Property>MainSectionCommandInterface</xr:Property>
+				<xr:State>Extended</xr:State>
+			</xr:PropertyState>
 		</InternalInfo>
 		<Properties>
 			<ObjectBelonging>Adopted</ObjectBelonging>
-			<Name>MCP_Сервер</Name>
+			<Name>mcp_tools</Name>
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>MCP-сервер</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru1</v8:lang>
+					<v8:content>1c-mcp-tools</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment/>
@@ -74,7 +86,6 @@
 		<ChildObjects>
 			<Language>Русский</Language>
 			<Subsystem>mcp_MCPСервер</Subsystem>
-			<Role>mcp_ОсновнаяРоль</Role>
 			<CommonModule>mcp_ОбщегоНазначения</CommonModule>
 			<CommonModule>mcp_Диспетчер</CommonModule>
 			<CommonModule>mcp_КонтейнерыПовтИсп</CommonModule>
@@ -85,6 +96,7 @@
 			<DataProcessor>mcp_УправлениеСервером</DataProcessor>
 			<DataProcessor>mcp_ИнструментДанныеОКонфигурации</DataProcessor>
 			<DataProcessor>mcp_РесурсОписаниеСинтаксисаВстроенногоЯзыка</DataProcessor>
+			<DataProcessor>mcp_ИнструментРаботаСЗапросами</DataProcessor>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>
