@@ -1,10 +1,13 @@
 {
-    "mcpServers": {
-      "1c-server-direct": {
-        "type": "streamable-http",
-        "url": "http://localhost/имя_вашей_публикации/hs/mcp/",
-        "disabled": false,
-        "alwaysAllow": []
-      }
+  "mcpServers": {
+    "1c-server": {
+      "type": "streamable-http",
+      "url": "https://host/имя_публикации/hs/mcp/",
+      "headers": {
+        "Authorization": "Basic <Base64Строка>"
+      },
+      "disabled": false,
+      "alwaysAllow": []
     }
   }
+}
