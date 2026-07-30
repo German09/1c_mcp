@@ -1,7 +1,7 @@
 {
   "mcpServers": {
-    "1c-server": {
-      "url": "https://host/имя_публикации/hs/mcp/",
+    "1c-server-via-proxy": {
+      "url": "http://localhost:8080/",
       "headers": {
         "Authorization": "Basic <Base64Строка>"
       }

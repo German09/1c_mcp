@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Анонимизирующий HTTP MCP-прокси (`proxy/`): проброс запросов к `…/hs/mcp/` с сохранением `Authorization`, анонимизация ответов `tools/call` и детокенизация аргументов; token map изолирован по пользователю (хеш `Authorization`).
 - Слияние с форком [RooLee10/1c-mcp-tools](https://github.com/RooLee10/1c-mcp-tools): инструмент работы с запросами и улучшенные описания метаданных для LLM.
 
 ## [1.0.6] - 2026-01-27

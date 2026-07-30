@@ -1,0 +1,10 @@
+[project]
+name = "onec-mcp-anonymizing-proxy"
+version = "0.1.0"
+description = "HTTP proxy for 1C MCP with anonymization and detokenization"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.uvicorn]
+# placeholder
