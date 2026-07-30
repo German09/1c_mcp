@@ -27,14 +27,10 @@
   <usePurposes>PersonalComputer</usePurposes>
   <scriptVariant>Russian</scriptVariant>
   <defaultRoles>Role.mcp_ОсновнаяРоль</defaultRoles>
-  <version>1.6.1</version>
-  <vendorInformationAddress>
-    <key>ru</key>
-    <value>https://vharin.ru</value>
-  </vendorInformationAddress>
+  <version>1.7.0</version>
   <configurationInformationAddress>
     <key>ru</key>
-    <value>https://github.com/vladimir-kharin/1c_mcp</value>
+    <value>https://github.com/German09/1c_mcp</value>
   </configurationInformationAddress>
   <languages uuid="3934c8ff-fc70-4830-a011-1fe02d9fe553">
     <name>Русский</name>

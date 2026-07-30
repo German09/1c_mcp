@@ -217,7 +217,6 @@ yarn-error.log*
 *.exe
 *.dmg 
 
-src/1c_ext/ConfigDumpInfo.xml
 .mcp.json
 .claude/
 CLAUDE.md
