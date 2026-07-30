@@ -28,6 +28,10 @@
   <scriptVariant>Russian</scriptVariant>
   <defaultRoles>Role.mcp_ОсновнаяРоль</defaultRoles>
   <version>1.7.0</version>
+  <vendorInformationAddress>
+    <key>ru</key>
+    <value>https://vharin.ru</value>
+  </vendorInformationAddress>
   <configurationInformationAddress>
     <key>ru</key>
     <value>https://github.com/German09/1c_mcp</value>
@@ -42,11 +46,11 @@
   </languages>
   <subsystems>Subsystem.mcp_MCPСервер</subsystems>
   <roles>Role.mcp_ОсновнаяРоль</roles>
-  <commonModules>CommonModule.mcp_ОбщегоНазначения</commonModules>
+  <commonModules>CommonModule.mcp_Выполнение</commonModules>
   <commonModules>CommonModule.mcp_Диспетчер</commonModules>
   <commonModules>CommonModule.mcp_КонтейнерыПовтИсп</commonModules>
   <commonModules>CommonModule.mcp_Метаданные</commonModules>
-  <commonModules>CommonModule.mcp_Выполнение</commonModules>
+  <commonModules>CommonModule.mcp_ОбщегоНазначения</commonModules>
   <commonModules>CommonModule.mcp_Содержимое</commonModules>
   <httpServices>HTTPService.mcp_APIBackend</httpServices>
   <dataProcessors>DataProcessor.mcp_ИнструментДанныеОКонфигурации</dataProcessors>
