@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Role xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e9c75216-1c8e-45d9-a497-aad1f065396b">
+  <name>mcp_ВыполнениеКодаИЗапросов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Выполнение кода и запросов (MCP)</value>
+  </synonym>
+  <comment>Доступ к MCP-инструментам execute_code и execute_query. Назначать только полноправным пользователям.</comment>
+</mdclass:Role>

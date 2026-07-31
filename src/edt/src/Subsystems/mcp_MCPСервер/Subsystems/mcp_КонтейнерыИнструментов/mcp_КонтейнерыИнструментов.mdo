@@ -8,5 +8,7 @@
   <includeHelpInContents>true</includeHelpInContents>
   <content>DataProcessor.mcp_ИнструментДанныеОКонфигурации</content>
   <content>DataProcessor.mcp_ИнструментРаботаСЗапросами</content>
+  <content>DataProcessor.mcp_ИнструментВыполнениеКода</content>
+  <content>DataProcessor.mcp_ИнструментЖурналРегистрации</content>
   <parentSubsystem>Subsystem.mcp_MCPСервер</parentSubsystem>
 </mdclass:Subsystem>

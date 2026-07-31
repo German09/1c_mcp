@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="8d6cf6fe-5aa6-4e2f-bc8c-5bf6d9533fcb">
+  <producedTypes>
+    <objectType typeId="31e46516-ab2b-456c-8956-deabd99c23d2" valueTypeId="352ceaae-c395-49d0-accb-78dd5468ae8b"/>
+    <managerType typeId="d1f48a69-6901-4972-83bc-dac4f3e92406" valueTypeId="20c13fbb-3049-43cf-985c-8fcb20e55592"/>
+  </producedTypes>
+  <name>mcp_ИнструментЖурналРегистрации</name>
+  <synonym>
+    <key>ru</key>
+    <value>Журнал регистрации (инструмент)</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+</mdclass:DataProcessor>

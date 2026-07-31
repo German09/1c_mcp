@@ -41,7 +41,7 @@ def _build_settings() -> Settings:
         # We raise early so operator sees misconfiguration immediately.
         raise RuntimeError("UPSTREAM_URL env var is required (base URL of 1C HTTP MCP service).")
 
-    tools_raw = _env_str("ANONYMIZATION_TOOLS", "execute_query,execute_code")
+    tools_raw = _env_str("ANONYMIZATION_TOOLS", "execute_query,execute_code,get_event_log")
     tools = {t.strip() for t in tools_raw.split(",") if t.strip()}
 
     timeout = float(_env_str("TIMEOUT", "60").strip() or "60")
