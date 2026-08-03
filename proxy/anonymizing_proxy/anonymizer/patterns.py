@@ -20,6 +20,34 @@ def _digits_only(s: str) -> str:
     return re.sub(r"\D+", "", s)
 
 
+# Standard UUID (8-4-4-4-12). 1C object refs use this form in MCP payloads.
+UUID_RE = re.compile(
+    r"(?i)\b[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\b"
+)
+
+
+def looks_like_uuid(value: str) -> bool:
+    """True if the whole string is a UUID (optionally braced)."""
+    stripped = value.strip()
+    if stripped.startswith("{") and stripped.endswith("}") and len(stripped) > 2:
+        stripped = stripped[1:-1].strip()
+    return bool(UUID_RE.fullmatch(stripped))
+
+
+def is_identity_key(key: str | None) -> bool:
+    """Keys whose values must not be touched by PII patterns (break get_nav_link)."""
+    if not key:
+        return False
+    k = key.lower().replace("_", "")
+    return k in {
+        "уникальныйидентификатор",
+        "uuid",
+        "guid",
+        "uniqueid",
+        "uniqueidentifier",
+    }
+
+
 def canonical_inn(s: str) -> str:
     return _digits_only(s)
 
@@ -143,6 +171,10 @@ def key_hint_category(key: str) -> str | None:
 def whole_value_category_by_heuristics(value: str) -> str | None:
     stripped = value.strip()
     if not stripped:
+        return None
+
+    # UUID must not be classified as INN/SNILS/etc. by digit-length heuristics.
+    if looks_like_uuid(stripped):
         return None
 
     if ORG_MARKERS_RE.search(stripped):

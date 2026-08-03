@@ -118,6 +118,10 @@ Invoke-WebRequest http://127.0.0.1:8080/health -UseBasicParsing
 - маппинг только **в памяти** процесса прокси и сбрасывается при рестарте;
 - на сессию действует лимит `ANONYMIZATION_TOKENMAP_MAX` (при превышении маппинг сессии очищается).
 
+### UUID и `_objectRef`
+
+Строки вида UUID (`8-4-4-4-12`) и поле `УникальныйИдентификатор` **не анонимизируются**: иначе CARD/INN-паттерны портят GUID, и `get_nav_link` / параметры `execute_query` перестают находить объект. Для цепочек object ref в `ANONYMIZATION_TOOLS` должны быть и `execute_query`, и `get_nav_link` (и при необходимости `parse_nav_link`).
+
 ## Windows-сервис (NSSM)
 
 На **каждой** машине нужны свои локальные пути: каталог `proxy`, `.venv`, Python.  

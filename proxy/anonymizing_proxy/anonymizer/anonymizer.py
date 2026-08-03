@@ -5,10 +5,11 @@ import re
 from typing import Any
 
 from .patterns import (
-    FIO_RE,
-    ORG_MARKERS_RE,
     INLINE_PATTERNS,
+    UUID_RE,
+    is_identity_key,
     key_hint_category,
+    looks_like_uuid,
     whole_value_category_by_heuristics,
     InlinePattern,
 )
@@ -56,27 +57,39 @@ class Anonymizer:
         if TOKEN_RE.search(text) and TOKEN_RE.fullmatch(text.strip()):
             return text
 
+        # Preserve UUIDs: CARD/INN/SNILS patterns match digit runs inside GUID strings
+        # and detokenize restores digits-only, breaking get_nav_link / object refs.
+        uuid_slots: list[str] = []
+
+        def _stash_uuid(match: re.Match[str]) -> str:
+            uuid_slots.append(match.group(0))
+            return f"\x00UUID{len(uuid_slots) - 1}\x00"
+
+        protected = UUID_RE.sub(_stash_uuid, text)
+
         changed = False
 
         # Whole-value category heuristics first (for short "just value" strings).
-        whole_cat = whole_value_category_by_heuristics(text)
-        if whole_cat in {
-            "ORG",
-            "PER",
-            "INN",
-            "KPP_OR_BIK",
-            "OGRN",
-            "SNILS",
-            "PHONE",
-            "EMAIL",
-        }:
-            changed = True
-            cat = self._map_whole_category(whole_cat)
-            canonical = self._canonicalize_for_category(cat, text)
-            return self._token_mapper.tokenize(session_id, cat, canonical)
+        # Skip when we stashed UUIDs — the original text is not a pure PII scalar.
+        if not uuid_slots:
+            whole_cat = whole_value_category_by_heuristics(protected)
+            if whole_cat in {
+                "ORG",
+                "PER",
+                "INN",
+                "KPP_OR_BIK",
+                "OGRN",
+                "SNILS",
+                "PHONE",
+                "EMAIL",
+            }:
+                changed = True
+                cat = self._map_whole_category(whole_cat)
+                canonical = self._canonicalize_for_category(cat, protected)
+                return self._token_mapper.tokenize(session_id, cat, canonical)
 
         # Inline patterns.
-        out = text
+        out = protected
         for spec in INLINE_PATTERNS:
             def repl(m: re.Match[str], _spec: InlinePattern = spec) -> str:
                 nonlocal changed
@@ -87,7 +100,10 @@ class Anonymizer:
 
             out = spec.regex.sub(repl, out)
 
-        if not changed and self._radical_mode and text.strip():
+        for idx, uuid_val in enumerate(uuid_slots):
+            out = out.replace(f"\x00UUID{idx}\x00", uuid_val)
+
+        if not changed and not uuid_slots and self._radical_mode and text.strip():
             return self._token_mapper.tokenize(session_id, "STR", text.strip())
 
         return out
@@ -101,7 +117,9 @@ class Anonymizer:
             out: dict[str, Any] = {}
             for k, v in obj.items():
                 next_hint = str(k) if k is not None else None
-                if isinstance(v, (str, list, dict)):
+                if isinstance(v, str) and is_identity_key(next_hint):
+                    out[k] = v
+                elif isinstance(v, (str, list, dict)):
                     out[k] = self.anonymize_obj(session_id, v, key_hint=next_hint)
                 else:
                     out[k] = v
@@ -110,6 +128,10 @@ class Anonymizer:
 
     def anonymize_string(self, session_id: str, value: str, *, key_hint: str | None) -> str:
         if not value:
+            return value
+
+        # Object ref UUIDs / explicit identity keys — leave untouched.
+        if is_identity_key(key_hint) or looks_like_uuid(value):
             return value
 
         # If it looks like JSON (execute_query wraps its result as JSON-string),
@@ -169,4 +191,3 @@ class Anonymizer:
             return value.strip()
         # Unknown: keep original.
         return value.strip()
-

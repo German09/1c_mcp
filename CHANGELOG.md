@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- Анонимизирующий прокси: UUID / поле `УникальныйИдентификатор` больше не режутся паттернами CARD/INN/SNILS (ломало `get_nav_link` и цепочки `_objectRef`).
+
 ### Added
 - Роль расширения `mcp_ВыполнениеКодаИЗапросов`: доступ к `execute_code` и `execute_query` только при наличии этой роли и полных прав сеанса (иначе скрытие в `tools/list` и отказ в `tools/call`).
 - Анонимизирующий HTTP MCP-прокси (`proxy/`): проброс запросов к `…/hs/mcp/` с сохранением `Authorization`, анонимизация ответов `tools/call` и детокенизация аргументов; token map изолирован по пользователю (хеш `Authorization`). Документация: запуск через `run_service.bat`, Windows-сервис (NSSM), публикация в IIS reverse proxy.
