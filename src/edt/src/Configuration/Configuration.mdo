@@ -49,6 +49,7 @@
   <roles>Role.mcp_ОсновнаяРоль</roles>
   <commonModules>CommonModule.mcp_Выполнение</commonModules>
   <commonModules>CommonModule.mcp_Диспетчер</commonModules>
+  <commonModules>CommonModule.mcp_КлиентскийАгент</commonModules>
   <commonModules>CommonModule.mcp_КонтейнерыПовтИсп</commonModules>
   <commonModules>CommonModule.mcp_Метаданные</commonModules>
   <commonModules>CommonModule.mcp_ОбщегоНазначения</commonModules>

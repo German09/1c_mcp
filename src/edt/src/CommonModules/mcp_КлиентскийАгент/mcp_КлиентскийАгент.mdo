@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonModule xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4abf04b8-493e-4c3c-bd70-dc476e1c33c2">
+  <name>mcp_КлиентскийАгент</name>
+  <synonym>
+    <key>ru</key>
+    <value>Клиентский агент MCP</value>
+  </synonym>
+  <server>true</server>
+  <externalConnection>true</externalConnection>
+  <clientOrdinaryApplication>true</clientOrdinaryApplication>
+</mdclass:CommonModule>
