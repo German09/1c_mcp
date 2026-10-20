@@ -28,14 +28,6 @@
   <scriptVariant>Russian</scriptVariant>
   <defaultRoles>Role.mcp_ОсновнаяРоль</defaultRoles>
   <version>1.9.1</version>
-  <vendorInformationAddress>
-    <key>ru</key>
-    <value>https://vharin.ru</value>
-  </vendorInformationAddress>
-  <configurationInformationAddress>
-    <key>ru</key>
-    <value>https://github.com/German09/1c_mcp</value>
-  </configurationInformationAddress>
   <languages uuid="3934c8ff-fc70-4830-a011-1fe02d9fe553">
     <name>Русский</name>
     <objectBelonging>Adopted</objectBelonging>
