@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<title>Открытие ссылки 1С</title>
+<style>
+  body { font: 15px/1.5 Segoe UI, Arial, sans-serif; margin: 3em auto; max-width: 56em; padding: 0 1em; color: #222; }
+  a.btn { display: inline-block; padding: .5em 1.2em; background: #f0c300; color: #000; border-radius: 4px; text-decoration: none; }
+  code { word-break: break-all; background: #f4f4f4; padding: .1em .3em; }
+  .err { color: #b00; }
+  details { margin-top: 2em; border-top: 1px solid #ddd; padding-top: 1em; }
+  summary { cursor: pointer; font-weight: 600; }
+  pre { background: #f4f4f4; padding: .8em; overflow-x: auto; font-size: 13px; }
+  button.copy { font: inherit; padding: .2em .8em; cursor: pointer; }
+  .howto { display: flex; flex-wrap: wrap; gap: 1.5em; align-items: flex-start; }
+  .howto ol { flex: 1 1 22em; min-width: 0; margin: 0; }
+  img.shot { flex: 0 0 auto; width: 300px; max-width: 100%; border: 1px solid #ddd; box-shadow: 0 1px 4px rgba(0,0,0,.12); }
+  ol li { margin-bottom: .4em; }
+  .note { display: inline-block; font-weight: 700; background: #e6f4ea; color: #1e6b34; border-left: 4px solid #2e9e4f; padding: .4em .8em; }
+</style>
+</head>
+<body>
+<h1>Открытие ссылки 1С</h1>
+<div id="msg">Нужен JavaScript.</div>
+
+<details id="manual" hidden>
+  <summary>Открыть вручную, без этой страницы</summary>
+  <p>Навигационная ссылка - это адрес документа, элемента справочника или списка внутри 1С.
+  Это как адрес сайта в браузере, только открывает его программа 1С. Ссылку можно вставить в 1С самому.</p>
+
+  <p><b>Если 1С уже открыта</b> в нужной базе (сервер <code id="mServer"></code>, база <code id="mBase"></code>):</p>
+  <div class="howto">
+    <ol>
+      <li>Скопируйте короткую ссылку: <code id="mShort"></code>
+        <button class="copy" type="button" data-copy="mShort">Скопировать</button> <span class="copied"></span></li>
+      <li>В окне 1С нажмите кнопку главного меню справа вверху, рядом с именем пользователя (1),
+        и выберите «Перейти по ссылке…» (2). То же самое - сочетание клавиш Shift+F11.</li>
+      <li>Вставьте ссылку (Ctrl+V) и подтвердите.</li>
+    </ol>
+    <img class="shot" src="menu-go-to-link.png" alt="Главное меню 1С: пункт «Перейти по ссылке…»">
+  </div>
+
+  <p><b>Если 1С не открыта:</b></p>
+  <div class="howto">
+    <ol>
+      <li>Скопируйте полную ссылку: <code id="mFull"></code>
+        <button class="copy" type="button" data-copy="mFull">Скопировать</button> <span class="copied"></span></li>
+      <li>Запустите 1С:Предприятие. В окне со списком информационных баз нажмите справа «Перейти по ссылке».</li>
+      <li>Вставьте ссылку (Ctrl+V) и подтвердите: 1С сама подключится к нужной базе и откроет объект.</li>
+    </ol>
+    <img class="shot" src="launcher-go-to-link.png" alt="Окно запуска 1С: ссылка «Перейти по ссылке»">
+  </div>
+</details>
+
+<details id="reg">
+  <summary>1С не открывается: зарегистрировать протокол e1c://</summary>
+  <p>Признаки: по кнопке ничего не происходит или Windows предлагает «найти приложение в Microsoft Store».
+  Значит, ссылки <code>e1c://</code> в Windows не привязаны к 1С. Регистрация делается один раз,
+  только для текущего пользователя.</p>
+  <p class="note">Права администратора не нужны.</p>
+
+  <p><b>Способ 1.</b> Скачайте <a href="e1c-register.reg" download>e1c-register.reg</a>, откройте его
+  и подтвердите добавление в реестр. Chrome может предупредить о типе файла - нажмите «Сохранить».</p>
+
+  <p><b>Способ 2.</b> Нажмите Win+R, введите <code>cmd</code>, вставьте команды и нажмите Enter:</p>
+  <pre id="cmds">reg add "HKCU\Software\Classes\e1c" /ve /d "URL:1C:Enterprise protocol" /f
+reg add "HKCU\Software\Classes\e1c" /v "URL Protocol" /d "" /f
+reg add "HKCU\Software\Classes\e1c\DefaultIcon" /ve /d "\"C:\Program Files\1cv8\common\1cestart.exe\",0" /f
+reg add "HKCU\Software\Classes\e1c\shell\open\command" /ve /d "\"C:\Program Files\1cv8\common\1cestart.exe\" /URL \"%1\"" /f</pre>
+  <p><button class="copy" type="button" data-copy="cmds">Скопировать команды</button> <span class="copied"></span></p>
+
+  <p>Путь <code>C:\Program Files\1cv8\common\1cestart.exe</code> - стандартный для 64-разрядной платформы.
+  Если 1С стоит в другом месте (например, <code>C:\Program Files (x86)\1cv8\common</code>), поправьте путь.
+  После регистрации вернитесь на эту вкладку и нажмите «Открыть в 1С».</p>
+</details>
+<script>
+// Кнопки «Скопировать»: data-copy - id элемента с текстом, отметка - в соседнем .copied
+document.querySelectorAll('button[data-copy]').forEach(function (button) {
+  button.addEventListener('click', function () {
+    var source = document.getElementById(button.getAttribute('data-copy'));
+    var mark = button.parentNode.querySelector('.copied');
+    var done = function () { if (mark) mark.textContent = 'Скопировано'; };
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(source.textContent).then(done);
+    } else {
+      var range = document.createRange(); range.selectNodeContents(source);
+      var selection = window.getSelection(); selection.removeAllRanges(); selection.addRange(range);
+      if (document.execCommand('copy')) done();
+    }
+  });
+});
+
+(function () {
+  // Ссылка передаётся после #: /e1c/#server/<сервер>/<база>#e1cib/<раздел>/...
+  // Часть после # браузер на сервер не отправляет.
+  var raw = location.hash.replace(/^#/, '');
+  try { raw = decodeURIComponent(raw); } catch (e) { }
+  raw = raw.replace(/^e1c:\/\//i, '');
+
+  var msg = document.getElementById('msg');
+  var m = /^server\/([^\/#]+)\/([^\/#]+)#(e1cib\/(?:list|data|navigationpoint)\/.+)$/.exec(raw);
+
+  // Только внутренние серверы, иначе ссылка могла бы увести клиент 1С с доменной
+  // аутентификацией на чужой сервер. Внутренний - имя без точек или имя в домене этой страницы.
+  function pageDomain() {
+    var host = location.hostname.toLowerCase();
+    if (/^[\d.]+$/.test(host) || host.indexOf(':') >= 0) return '';
+    var labels = host.split('.');
+    if (labels.length < 2) return '';
+    return labels.length > 2 ? labels.slice(1).join('.') : host;
+  }
+  function isInternal(server) {
+    var host = server.toLowerCase().replace(/:\d{1,5}$/, '');
+    if (/^[a-z0-9-]+$/.test(host)) return true;
+    var domain = pageDomain();
+    return domain !== '' && /^[a-z0-9.-]+$/.test(host)
+      && host.slice(-(domain.length + 1)) === '.' + domain;
+  }
+  var internal = m && isInternal(m[1]);
+
+  if (!m || !internal) {
+    msg.innerHTML = '<p class="err">Ссылка не распознана или ведёт не на внутренний сервер 1С.</p>'
+      + '<p>Формат: <code>' + location.origin + location.pathname
+      + '#server/&lt;сервер&gt;/&lt;база&gt;#e1cib/list/Документ.ЗаказКлиента</code></p>';
+    return;
+  }
+
+  var url = 'e1c://' + raw;
+  var a = document.createElement('a');
+  a.className = 'btn';
+  a.href = url;
+  a.textContent = 'Открыть в 1С';
+  var code = document.createElement('code');
+  code.textContent = url;
+
+  msg.innerHTML = '<p>Открываем в 1С:Предприятии…</p>';
+  var p = document.createElement('p');
+  p.appendChild(code);
+  msg.appendChild(p);
+  var p2 = document.createElement('p');
+  p2.appendChild(a);
+  msg.appendChild(p2);
+  var hint = document.createElement('p');
+  hint.textContent = 'Если браузер спросит, разрешите открытие 1С и отметьте «Всегда разрешать». '
+    + 'Если ничего не происходит, нажмите «Открыть в 1С»: без нажатия браузер не даёт странице повторно запускать приложения. '
+    + 'Если и после нажатия 1С не открылась, зарегистрируйте протокол или откройте ссылку вручную - инструкции ниже.';
+  msg.appendChild(hint);
+
+  // Ручное открытие: сервер, база и обе ссылки - из самой ссылки
+  document.getElementById('mServer').textContent 	= m[1];
+  document.getElementById('mBase').textContent 		= m[2];
+  document.getElementById('mShort').textContent 	= m[3];
+  document.getElementById('mFull').textContent 		= url;
+  document.getElementById('manual').hidden 			= false;
+
+  // Переходить только в видимой вкладке и только один раз: фоновая вкладка
+  // (восстановление сессии) оставила бы висеть невидимый вопрос Chrome,
+  // и пока он не закрыт, Chrome молча гасит все следующие запуски приложений.
+  var launched = false;
+  function launch() {
+    if (launched || document.visibilityState !== 'visible') return;
+    launched = true;
+    location.href = url;
+  }
+  document.addEventListener('visibilitychange', launch);
+  launch();
+})();
+</script>
+</body>
+</html>
